@@ -16,9 +16,9 @@ define( ['jquery', 'underscore'], function ( $, _ ) {
 		draggable:   true,
 		markers:     [
 			{
-				locationlatlng: '0,0',
-				title:          'demo marker',
-				custompinimage: '',
+				locationlatlng: '40.7315,-73.3867',
+				title:          'HIG Services',
+				custompinimage: '../images/mapicon.png',
 			}
 		],
 	};
