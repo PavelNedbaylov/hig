@@ -133,3 +133,11 @@ $( document ).ready(function() {
 			$(this).parent().addClass('active');
 		});
 } );
+
+// fancybox
+
+for(let i=1; i<=$("#portfolio-content").children().length; i++){
+	$().fancybox({
+		selector : '.galery_'+i
+	});
+}
