@@ -135,7 +135,6 @@ $( document ).ready(function() {
 } );
 
 // fancybox
-
 for(let i=1; i<=$("#portfolio-content").children().length; i++){
 	$().fancybox({
 		selector : '.galery_'+i
