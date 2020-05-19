@@ -3396,3 +3396,27 @@ footer .widget-icon-box .icon-box {
 textarea {
   resize: none;
 }
+select {
+  cursor: pointer;
+}
+/* input[type='file'] {
+  opacity:0    
+} */
+
+.wpcf7-form-control-wrap label {
+  cursor: pointer;
+  background: #f2f2f2;
+  border-radius: 2px;
+  border: 1px solid #dddddd;
+  box-shadow: none;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+#upload-resume {
+  opacity: 0;
+  /* position: absolute; */
+  z-index: -1;
+}
