@@ -50,12 +50,16 @@ $( document ).ready(function() {
 	$( '[data-toggle="tooltip"]' ).tooltip();
 
 
-
-    $("a[data-rel^='prettyPhoto']").prettyPhoto({
-        theme: 'pp_default',
-		hook: 'data-rel',
-		social_tools: ''
-    });
+	try{
+		$("a[data-rel^='prettyPhoto']").prettyPhoto({
+			theme: 'pp_default',
+			hook: 'data-rel',
+			social_tools: ''
+		});
+	}
+	catch {
+		console.log('prettyPhoto does not work')
+	}
 
 /* ---------------------------------------------------
 	Isotope Portfolio and Blog
@@ -133,6 +137,18 @@ $( document ).ready(function() {
 			$(this).parent().addClass('active');
 		});
 } );
+
+
+$('#contact-email').submit(function () {
+	$.ajax({
+		type: "POST",
+		url: "mail.php",
+		data: $(this).serialize()
+	}).done(function () {
+		alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
+	})
+	return false;
+})
 
 // fancybox
 for(let i=1; i<=$("#portfolio-content").children().length; i++){
