@@ -2046,6 +2046,7 @@ a > img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
   width: 100%; 
   padding: 20px; 
   margin-bottom: 15px; 
+  -webkit-appearance: menulist-button;
 }
 .wpcf7-text:focus, .wpcf7-textarea:focus { border-color: #dddddd; background: #ffffff; }
 
