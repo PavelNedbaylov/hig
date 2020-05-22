@@ -61,7 +61,7 @@ if(isset($_POST['send'])) {
 		$mail->Subject  =  $subject;
 		$mail->Body     =  "<strong>Full Name:</strong> " . $contactName. ".<br/>";
 		$mail->Body     .= "<strong>Message:</strong> " . $message. ".";
-		$mail->AddAddress('email@domain.com');
+		$mail->AddAddress('pavelandorel@gmail.com');
 		$mail->AddReplyTo($email);
 		
 		if(!$mail->Send()) {  // send e-mail
