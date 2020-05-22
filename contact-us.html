@@ -344,6 +344,9 @@
 				   {
 					 jQuery("#status").html(response).show('normal');
 					 jQuery('#inputMessage, #inputEmail, #inputName').val("");
+				   },
+				   error: function(err){
+					 console.log(err)
 				   }
 				 });
 				return false;
