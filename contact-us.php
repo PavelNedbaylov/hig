@@ -330,6 +330,7 @@
 	* = Contact form validation
 	* -------------------------------------------------------*/
 	$(document).ready(function() {
+	$('form').submit(function(){
 	try {
 		jQuery("#contactForm").validate({
 			submitHandler: function() {
@@ -380,6 +381,7 @@
 	} catch ( err ) {
 		alert("Something went wrong, please check the settings in contact/contact.php file.");
 	}
+	})
 	});
 </script>
 
