@@ -2072,7 +2072,13 @@ a > img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
 .wpcf7 .wpcf7-response-output { margin: 5px 0; padding: 10px 20px; border-radius: 2px; }
 .wpcf7 .wpcf7-validation-errors{ background-color: #faf8d2; border: 2px solid #faf8d2; color: #b8b015; }
-.wpcf7-form-control-wrap label.error  {background:red; color:#fff; border-radius:4px; padding:4px 6px}
+.wpcf7-form-control-wrap label.error  {
+  background: transparent;
+  border: none;
+  color: red; 
+  border-radius: 0; 
+  padding: 0;
+}
 .wpcf7 .alert, .wpcf7 .success{padding: 4px 6px; display: inline-block; border-radius: 2px; margin-bottom: 12px;}
 .wpcf7 .alert { background-color: #ffe5e5; border: 2px solid #ffe5e5; color: #e50000; }
 .wpcf7 .success { background-color: #dcf2dc; border: 2px solid #dcf2dc; color: #389738; }
@@ -3490,4 +3496,22 @@ select {
   bottom: 0;
   height: 278px;
   margin: auto;
+}
+#upload-resume-label {
+  display: inline-block;
+  height: 63px;
+}
+#upload-resume-label .icon-box {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+#upload-resume-label .icon-box i{
+  font-size: 20px;
+}
+#upload-resume-label span{
+  max-width: 147px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
 }

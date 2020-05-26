@@ -32,12 +32,7 @@ if(isset($_POST['send'])) {
 			$email = trim($_POST['inputEmail']);
 		}
 		 
-		//Check to make sure comments were entered 
-		if(trim($_POST['inputMessage']) === '') {
-			$messageError = 'You forgot to enter your message.';
-			$hasError = true;
-		} 
-		else {
+		if(isset($_POST['inputMessage']) && trim($_POST['inputMessage']) !== '') {
 			if(function_exists('stripslashes')) {
 		  		$message = stripslashes(trim($_POST['inputMessage']));
 		 	} 
@@ -59,9 +54,17 @@ if(isset($_POST['send'])) {
 		$mail->FromName = $contactName;
 		$mail->WordWrap = 50;    
 		$mail->Subject  =  $subject;
-		$mail->Body     =  "<strong>Full Name:</strong> " . $contactName. ".<br/>";
-		$mail->Body     .= "<strong>Message:</strong> " . $message. ".";
-		$mail->AddAddress('pavelandorel@gmail.com');
+		$mail->Body     =  "<strong>Full Name:</strong> " . $contactName. "<br/>";
+		if(isset($_POST['inputPosition']) && trim($_POST['inputPosition']) !== ''){
+			$mail->Body .=  "<strong>Position:</strong> " . trim($_POST['inputPosition']). "<br/>";
+		}
+		if(isset($_POST['inputMessage']) && trim($_POST['inputMessage']) !== ''){
+			$mail->Body .= "<strong>Message:</strong> " . $message. "<br/>";
+		}
+		if(isset($_FILES['inputResume'])) {
+			$mail->AddAttachment($_FILES['inputResume']['tmp_name'],$_FILES['inputResume']['name']);
+		}
+		$mail->AddAddress('hr@higservices.com');
 		$mail->AddReplyTo($email);
 		
 		if(!$mail->Send()) {  // send e-mail
@@ -71,6 +74,7 @@ if(isset($_POST['send'])) {
 		{
 			$status =  '<div class="success fade-in">E-mail was sent successfully.</div>';
 		}
+		// echo '<pre>'; print_r($_POST); echo '</pre>';
 		echo $status; die();
 		
 		

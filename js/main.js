@@ -156,3 +156,8 @@ for(let i=1; i<=$("#portfolio-content").children().length; i++){
 		selector : '.galery_'+i
 	});
 }
+
+// input file
+$("#upload-resume").change(function() {
+	$("#upload-resume-label span")[0].innerHTML = this.files[0].name
+});
